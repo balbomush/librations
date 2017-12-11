@@ -1,0 +1,13 @@
+{% extends 'book/base.html' %}
+
+{% block content %}
+    {% for post in names %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date.year }}
+            </div>
+            <h1><a href="{% url 'book_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.descriptions|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
