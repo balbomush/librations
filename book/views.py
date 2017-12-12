@@ -32,12 +32,11 @@ def book_new(request):
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit=False)
-            book.published_date = timezone.now()
             book.save()
             return redirect('book_detail', pk=book.pk)
     else:
         form = BookForm()
-    return render(request, 'book/book_edit.html', {'form': form})
+    return render(request, 'book/book_new.html', {'form': form})
 
 def book_edit(request, pk):
     book = get_object_or_404(Book, pk=pk)
@@ -45,8 +44,6 @@ def book_edit(request, pk):
         form = BookForm(request.POST, instance=book)
         if form.is_valid():
             book = form.save(commit=False)
-            book.author = request.user
-            book.published_date = timezone.now()
             book.save()
             return redirect('book_detail', pk=book.pk)
     else:

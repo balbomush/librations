@@ -2,8 +2,30 @@
 
 {% block content %}
     <h1>New book</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+    <form method="POST" class="post-form">
+        <div class ="forms">
+            <p>
+                <label>Заголовок:</label>
+                <p>{{ form.title }}</p>
+            </p>
+            <p>
+                <label>Автор:</label>
+                <p>{{ form.author }}</p>
+            </p>
+            <p>
+                <label>Дата публикации:</label>
+                <p>{{ form.published_date }}</p>
+            </p>
+            <p>
+                <label>Описание:</label>
+                <p>{{ form.descriptions }}</p>
+            </p>
+            <p>
+                <label>Жанр:</label>
+                <p>{{ form.genre }}</p>
+            </p>
         <button type="submit" class="save btn btn-default">Save</button>
+        </div>
+        {% csrf_token %}
     </form>
 {% endblock %}

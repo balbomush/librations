@@ -3,7 +3,9 @@
 {% block content %}
     <h1>New book</h1>
     <form method="POST" class="book-form">{% csrf_token %}
+        <div>
         {{ form.as_p }}
+        </div>
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}
