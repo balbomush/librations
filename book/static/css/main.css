@@ -48,3 +48,9 @@ div.forms{
     width: 100%;
     margin:30px;
 }
+@font-face {
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lobster Regular'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v20/gFvN2Cxd1zUNqfb3FQe_Pw.ttf) format('truetype');
+  }
