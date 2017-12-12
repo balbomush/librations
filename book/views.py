@@ -32,7 +32,6 @@ def book_new(request):
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit=False)
-            book.author = request.user
             book.published_date = timezone.now()
             book.save()
             return redirect('book_detail', pk=book.pk)
