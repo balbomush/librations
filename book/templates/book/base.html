@@ -10,7 +10,7 @@
     <body>
         <div class="page-header">
             <a href="{% url 'book_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Book</a></h1>
+            <h1><a href="{% url 'main' %}">Book</a></h1>
         </div>
         
         {% block content %}

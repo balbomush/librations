@@ -1,5 +1,12 @@
 {% extends 'book/base.html' %}
 {% block content %}
-{{ books }}
+{% for book in books %}
+<div>
+<h1><a href="{% url 'book_detail' pk=book.pk %}">{{ book.title }}</a></h1>
+<p><font>Автор:</font> <span class="list">{{ book.author }}</span> <font>Год публикации:</font> <span class="list">{{ book.published_date.year }}</span></p>
+<p><font>Кратенько:</font> {{ book.descriptions|linebreaksbr }}</p>
+<p><font>Жанр:</font> <span class="list">{{ book.genre }}</span></p>
+</div>
+{% endfor %}
 {% endblock %}
 

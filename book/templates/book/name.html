@@ -1,13 +1,16 @@
 {% extends 'book/base.html' %}
 
 {% block content %}
-    {% for post in names %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date.year }}
-            </div>
-            <h1><a href="{% url 'book_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.descriptions|linebreaksbr }}</p>
-        </div>
+{% if names %}
+    {% for book in names %}
+    <div>
+    <h1><a href="{% url 'book_detail' pk=book.pk %}">{{ book.title }}</a></h1>
+    <p><font>Автор:</font> <span class="list">{{ book.author }}</span> <font>Год публикации:</font> <span class="list">{{ book.published_date.year }}</span></p>
+    <p><font>Кратенько:</font> {{ book.descriptions|linebreaksbr }}</p>
+    <p><font>Жанр:</font> <span class="list">{{ book.genre }}</span></p>
+    </div>
     {% endfor %}
+{% else %}
+<p>Книги отсутвуют</p>
+{% endif %}
 {% endblock %}

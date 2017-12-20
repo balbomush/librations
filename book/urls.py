@@ -2,6 +2,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    url(r'^$',views.main, name='main'),
     url(r'^Достоевский$',views.Dostoevsky, name='Dostoevsky'),
     url(r'^Гоголь$',views.Gogol, name='Gogol'),
     url(r'^Лавкрафт$',views.Lovecraft, name='Lovecraft'),

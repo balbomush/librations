@@ -93,8 +93,8 @@ def remove_book(request,book_id):
     return redirect('/')
 
 
-def names(request):
-    return render(request, 'book/base.html', {})
+def main(request):
+    return render(request, 'book/root.html', {})
 
 
 def book_detail(request, pk):
